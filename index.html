@@ -19,11 +19,12 @@
           <h2>Username</h2>
           <img alt="Avatar" class="avatar" src="data:application/octet-stream;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4BAMAAADLSivhAAAAG1BMVEXMzMyWlpacnJy+vr6jo6OxsbGqqqrFxcW3t7fLh8KjAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAnUlEQVRYhe3RvQrCMBiF4VOl1rGCFxDN0FWK4Frp4tjBC9CheyyVrlK8cH+mBopmFHmf7R0OHyESAAAAAOCXTNQuXbyuxvOz6V71tch3djS/iM/KlJbaKi4aN8ggkTaJydRI9uBl2FjNzTzfqt54GTaeW71PRZWXYePeqdRdOhovw8Zl5/LOKsnqYQaOV4v09bGz08UNEgAAAAD+1QORnRwe8Vw6/QAAAABJRU5ErkJggg==">
           <div class="stat">Rank <span>1</span></div>
-          <div class="stat">HP <span id="hp">200</span>/<span id="max-hp">200</span></div>
-          <div class="stat">MP <span id="mp">25/<span id="max-mp">25</span></div>
+          <div class="stat">HP <span id="hp">80</span>/<span id="max-hp">80</span></div>
+          <div class="stat">MP <span id="mp">10</span>/<span id="max-mp">10</span></div>
+          <div class="stat">XP <span id="xp">0</span>/<span id="xp-to-lvl">3</span></div>
         </div>
         <div class="col-md-6 middle text-center">
-          <h2>Area: Cinereous City</h2>
+          <h2>Area: <span id="area">Cinereous City</span></h2>
 
           <div id="town-panel">
             <button id="ex-wastelands" class="btn btn-sm">Explore - Wastelands</button>
@@ -43,7 +44,8 @@
       </div>
     </div>
 
-    <footer id="log">
+    <footer>
+      <textarea readonly name="" id="log" autocapitalize="off"></textarea>
     </footer>
 
   </body>

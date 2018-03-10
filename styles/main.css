@@ -48,6 +48,12 @@ header {
   border-radius: 0;
   width: 200px;
 }
+textarea#log {
+  height: 100%;
+  width: 500px;
+  text-align: left;
+  resize: none;
+}
 footer {
   position: absolute;
   bottom: 0;
