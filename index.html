@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>rpg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Mina|Roboto" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1><a class="logo" href="index.html">Cool RPG</strong></a></h1>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 left panel text-center">
+          <h2>Username</h2>
+          <img alt="Avatar" class="avatar" src="data:application/octet-stream;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4BAMAAADLSivhAAAAG1BMVEXMzMyWlpacnJy+vr6jo6OxsbGqqqrFxcW3t7fLh8KjAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAnUlEQVRYhe3RvQrCMBiF4VOl1rGCFxDN0FWK4Frp4tjBC9CheyyVrlK8cH+mBopmFHmf7R0OHyESAAAAAOCXTNQuXbyuxvOz6V71tch3djS/iM/KlJbaKi4aN8ggkTaJydRI9uBl2FjNzTzfqt54GTaeW71PRZWXYePeqdRdOhovw8Zl5/LOKsnqYQaOV4v09bGz08UNEgAAAAD+1QORnRwe8Vw6/QAAAABJRU5ErkJggg==">
+          <div class="stat">Rank <span>1</span></div>
+          <div class="stat">HP <span id="hp">200</span>/<span id="max-hp">200</span></div>
+          <div class="stat">MP <span id="mp">25/<span id="max-mp">25</span></div>
+        </div>
+        <div class="col-md-6 middle text-center">
+          <h2>Area: Cinereous City</h2>
+
+          <div id="town-panel">
+            <button id="ex-wastelands" class="btn btn-sm">Explore - Wastelands</button>
+            <button class="btn btn-sm">Shop</button>
+          </div>
+          <div id="attack-panel" style="display: none;">
+            <button id="attack" class="btn btn-sm">Attack</button>
+            <button id="flee" class="btn btn-sm">Flee</button>
+          </div>
+
+        </div>
+        <div class="col-md-3 right panel text-center" style="display: none;">
+          <h2 id="monster-name"></h2>
+          <img id="monster-avatar" alt="Avatar" class="avatar" src="">
+          <div class="stat">HP <span id="monster-hp">200</span>/<span id="monster-max-hp">200</span></div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="log">
+    </footer>
+
+  </body>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="scripts/main.js"></script>
+</html>
