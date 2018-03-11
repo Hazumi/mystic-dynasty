@@ -13,9 +13,9 @@ $(document).ready(function() {
   const $townPanel = $('#town-panel');
   const $attackPanel = $('#attack-panel');
   const $shopPanel = $('#shop-panel');
-  const $monsterPanel = $('.right');
-  const $monsterName = $('#monster-name');
-  const $monsterAvatar = $('#monster-avatar');
+  const $characterPanel = $('.right');
+  const $characterName = $('#character-name');
+  const $characterAvatar = $('#character-avatar');
   const $monsterHp = $('#monster-hp');
   const $monsterMaxHp = $('#monster-max-hp');
   const $log = $('#log');
@@ -38,6 +38,12 @@ $(document).ready(function() {
     },
     state: {
       combat: false
+    },
+    npc: {
+      cinger: {
+        name: 'Cinger',
+        avatar: 'http://via.placeholder.com/120x120'
+      }
     },
     monster: {
       Bloodbeast: function() {
@@ -118,21 +124,23 @@ $(document).ready(function() {
 
   }; */
 
-  const renderPanels = modeType => {
+  const renderPanels = (modeType, npc) => {
     if (modeType == 'combat') {
       $townPanel.hide();
       $attackPanel.show();
-      $monsterPanel.show();
+      $characterPanel.show();
       game.state.combat = true;
     } else if (modeType == 'town') {
       $townPanel.show();
       $attackPanel.hide();
-      $monsterPanel.hide();
+      $characterPanel.hide();
       game.state.combat = false;
     } else if (modeType == 'shop') {
       $townPanel.hide();
       $attackPanel.hide();
+      $characterPanel.show();
       $shopPanel.show();
+      populateCharUI(npc);
     }
   };
 
@@ -182,24 +190,20 @@ $(document).ready(function() {
     }
   };
 
-  const populateEnemyUI = monster => {
-    $monsterName.text(monster.name);
-    $monsterAvatar.attr('src', monster.avatar);
-    $monsterHp.text(monster.hp);
-    $monsterMaxHp.text(monster.hp);
+  const populateCharUI = character => {
+    $characterName.text(character.name);
+    $characterAvatar.attr('src', character.avatar);
+    $monsterHp.text(character.hp);
+    $monsterMaxHp.text(character.hp);
   };
 
   const combat = monster => {
     renderPanels('combat');
-    populateEnemyUI(monster);
+    populateCharUI(monster);
     $atkBtn.bind('click', () => {
       playerAttack(monster);
       monsterAttack(monster);
     });
-  };
-
-  const shop = items => {
-    renderPanels('shop');
   };
 
   setInterval(() => {
@@ -219,7 +223,7 @@ $(document).ready(function() {
   });
 
   $shop.on('click', () => {
-    shop();
+    renderPanels('shop', game.npc.cinger);
   });
 
 });
